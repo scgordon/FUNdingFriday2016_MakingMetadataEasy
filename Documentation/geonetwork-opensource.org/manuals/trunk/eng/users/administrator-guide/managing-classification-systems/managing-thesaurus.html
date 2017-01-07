@@ -1,0 +1,682 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing thesaurus &mdash; GeoNetwork opensource 3.0.4 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GeoNetwork opensource 3.0.4 documentation" href="../../index.html"/>
+        <link rel="up" title="Managing classification system" href="index.html"/>
+        <link rel="next" title="Managing metadata standards" href="../managing-metadata-standards/index.html"/>
+        <link rel="prev" title="Managing directories" href="managing-directories.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> GeoNetwork opensource
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/about.html">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/authors.html">Author</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#project-steering-committee-psc">Project Steering Committee (PSC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#committers">Committers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#contributors">Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#the-documentation">The documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/change-log/index.html">Change log</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.0.html">Version 3.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.1.html">Version 3.0.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.2.html">Version 3.0.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.3.html">Version 3.0.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.4.html">Version 3.0.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.2.0.html">Version 3.2.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/quick-start/index.html">Quick start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#starting-the-catalog">Starting the catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#signing-in-and-load-templates">Signing in and load templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#searching-information">Searching information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#discovering-information">Discovering information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#for-more-information">For more information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/describing-information/index.html">Describing information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/managing-templates.html">Creating templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/creating-metadata.html">Creating a new record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/importing-metadata.html">Importing a new record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/editing-metadata.html">Editing metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/deleting-metadata.html">Deleting a record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/multilingual-editing.html">Multilingual editing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/associating-resources/index.html">Associating resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/associating-resources/linking-documents.html">Associating documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/associating-resources/linking-records.html">Associating another record</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/tag-information/index.html">Classify information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/tag-information/tagging-with-categories.html">Tagging with categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/tag-information/tagging-with-keywords.html">Tagging with keywords</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/publishing/index.html">Publishing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/managing-privileges.html">Managing privileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/restricting-information-to-metadata-sections.html">Restricting information to metadata sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/transfering-privileges.html">Transfering privileges</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/analyzing/index.html">Analyzing data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/analyzing/metadata.html">Statistics on catalog content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/analyzing/data.html">Analyze and visualize data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/workflow/index.html">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/validation.html">Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/suggestion.html">Suggestion for improving metadata content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/life-cycle.html">Life cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/geopublication.html">Publishing GIS data in a map server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/versioning.html">Versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/batchupdate.html">Updating a set of records</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/harvesting/index.html">Harvesting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-geonetwork.html">GeoNetwork 2.0 Harvester</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-csw.html">Harvesting CSW services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-ogcwxs.html">Harvesting OGC Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-filesystem.html">Local File System Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-webdav.html">WEBDAV Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-oaipmh.html">OAIPMH Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-sde.html">Harvesting an ARCSDE Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-geoportal.html">GeoPortal REST Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-thredds.html">THREDDS Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-wfs-features.html">WFS GetFeature Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-z3950.html">Z3950 Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#mechanism-overview">Mechanism overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-life-cycle">Harvesting life cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#multiple-harvesting-and-hierarchies">Multiple harvesting and hierarchies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-fragments-of-metadata-to-support-re-use">Harvesting Fragments of Metadata to support re-use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#https-support">HTTPS support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#the-main-page">The main page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-status-and-error-icons">Harvesting Status and Error Icons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-result-tips">Harvesting result tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#adding-new-harvesters">Adding new harvesters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvest-history">Harvest History</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/export/index.html">Exporting records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/export/index.html#export-as-a-zip-archive">Export as a ZIP archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/export/index.html#export-as-a-csv-file">Export as a CSV file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../configuring-the-catalog/index.html">Configuring the catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-the-catalog/system-configuration.html">System configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-the-catalog/csw-configuration.html">Configuring CSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-the-catalog/virtual-csw-configuration.html">Configuring virtual CSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-the-catalog/inspire-configuration.html">Configuring for the INSPIRE Directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configuring-the-catalog/map-server-configuration.html">Map servers configuration for geopublication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../managing-users-and-groups/index.html">Managing users and groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/creating-group.html">Creating group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/creating-user.html">Creating user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/user-self-registration.html">User Self-Registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/authentication-mode.html">Authentication mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/index.html#default-user">Default user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/index.html#user-session">User session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/index.html#users-groups-and-roles">Users, Groups and Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Managing classification system</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="managing-categories.html">Managing categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="managing-directories.html">Managing directories</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Managing thesaurus</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../managing-metadata-standards/index.html">Managing metadata standards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../managing-metadata-standards/index.html#adding-a-schema">Adding a schema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maintainer-guide/index.html">Maintainer guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/installing/index.html">Installing the application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/installing-from-the-installer.html">Installing from the installer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/installing-from-war-file.html">Installing from WAR file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/installing-from-source-code.html">Installing from source code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/installing-solr.html">Installing Solr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/configuring-database.html">Configuring the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/loading-samples.html">Loading templates and sample data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/customizing-data-directory.html">Customizing the data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/using-multinode-mode.html">Using multinode mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/updating/index.html">Updating the application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/updating/automatic-update.html">Automatic update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/updating/manual-update.html">Manual update</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/backup/index.html">Backup the application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/csw.html">Catalog Service for the Web (CSW)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/opensearch.html">OpenSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/oai-pmh.html">Open Archive Initiative (OAI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/z39-50.html">Z39-50</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/rdf-dcat.html">RDF DCAT end point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/the-geonetwork-api.html">GeoNetwork API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/writing-documentation.html">Writing documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#build-the-docs">Build the docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#edit-the-restructuredtext-files">Edit the reStructuredText files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#sphinx">Sphinx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/translating.html">Translating the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/translating.html#translating-a-standard">Translating a standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/making-a-pull-request.html">Making a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/doing-a-release.html">Doing a GeoNetwork release</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../customizing-application/index.html">Customizing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/search-ui/index.html">Search application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/loadview.html">Create your own view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/configdefault.html">Change default view configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/customview.html">Create your own view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/enrichview.html">Enrich your custom view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/wro4jdependencies.html">Wro4j resource management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/creating-custom-view.html">Customizing metadata views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html">Customizing editor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-field-type">Defining field type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#grouping-element-from-the-standards">Grouping element from the standards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-multilingual-fields">Defining multilingual fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#configuring-views">Configuring views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-a-view">Defining a view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-a-tab">Defining a tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-section-to-a-tab">Adding a section to a tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-field">Adding a field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-template-based-field">Adding a template based field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-documentation-or-help">Adding documentation or help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-button">Adding a button</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/changing-layout.html">Theming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html">Configuring search fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#add-a-search-field">Add a search field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#boosting-documents-and-fields">Boosting documents and fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#boosting-search-results">Boosting search results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/configuring-facetted-search.html">Configuring facetted search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-facetted-search.html#facet-principle">Facet principle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-facetted-search.html#facet-response-when-searching">Facet response when searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-facetted-search.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/advanced-configuration.html">Advanced configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/advanced-configuration.html#user-session-timeout-configuration">User session timeout configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html">Implementing schema plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#metadata-schemas-and-profiles">Metadata schemas and profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#implementing-a-metadata-schema-or-profile">Implementing a metadata schema or profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#schema-plugins">Schema Plugins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/characterset.html">Characterset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/misc.html">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/introduction/index.html">Introduction to GeoNetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/introduction/deployment/index.html">Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/introduction/setup/index.html">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/introduction/edit/index.html">Editing Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/introduction/harvesting/index.html">Harvesting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/customui/index.html">Customize your GeoNetwork UI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/customui/search/index.html">Search page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/customui/view/index.html">Formatter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/hookcustomizations/index.html">Hook your own code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/newproject/index.html">Separate your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/events/index.html">Using Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/ui/index.html">Adding new User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/schemaplugins/index.html">Schema Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/searchfields/index.html">Search Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/inspire/index.html">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/inspire/view-geoserver.html">Tutorial setting up INSPIRE view service with GeoNetwork and GeoServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/inspire/view-mapserver.html">Tutorial setting up INSPIRE view service with GeoNetwork and Mapserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/inspire/download-atom.html">Tutorial setting up an Atom/OpenSearch based INSPIRE download service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/inspire/download-geoserver.html">Tutorial setting up a WFS based INSPIRE download service with GeoServer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../annexes/index.html">Annexes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/mef-format.html">Metadata Exchange Format (MEF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/glossary/index.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/standards/index.html">Standards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../annexes/standards/iso19139/index.html">ISO Standard for metadata on Geographic Information (ISO 19139)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../annexes/standards/dublin-core/index.html">Dublin Core</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">GeoNetwork opensource</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Administrator guide</a> &raquo;</li>
+      
+          <li><a href="index.html">Managing classification system</a> &raquo;</li>
+      
+    <li>Managing thesaurus</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/geosource-catalogue/doc/blob/develop/en/administrator-guide/managing-classification-systems/managing-thesaurus.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="managing-thesaurus">
+<span id="id1"></span><h1>Managing thesaurus<a class="headerlink" href="#managing-thesaurus" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>A thesaurus is a list of concepts from a specialized field of knowledge. In a metadata catalog, concepts from a thesaurus can be assigned to a metadata record (as keywords) as a way of associating it with one or more concepts from a field of knowledge. For example, a record may be assigned a keyword &#8216;AGRICULTURE - Crops&#8217; meaning that the record describes a resource or activity relating to crops in the field of Agriculture. It&#8217;s a good practice to look for existing thesauri before creating your own thesuarus.</p>
+<p>In GeoNetwork, the process of assigning keywords to a metadata record takes place in the metadata editor. The user can choose concepts from one or more thesauri to associate the record with the concepts described by those concepts. This process is supported for both ISO19115/19139 and dublin core metadata records using an thesaurus picker.</p>
+<p>Concepts within a field of knowledge or in different fields of knowledge may be related or even be equivalent. For example, in a thesaurus describing geographic regions, the Australian state of &#8216;Tasmania&#8217; is a specialization of the country of Australia. As an example of overlapping concepts in different fields, a thesaurus describing science activities in the field of global change may have concepts relating to agricultural activities that will be equivalent to terms from a thesaurus that describes the themes used in a map series.</p>
+<p>In GeoNetwork, thesauri are represented as SKOS (<a class="reference external" href="http://www.w3.org/TR/skos-reference">http://www.w3.org/TR/skos-reference</a>) and stored in an application/xml+rdf encoding. SKOS captures concepts and relationships between concepts. SKOS thesauri can be imported from standalone files or they can be generated from ISO19135 register records in a GeoNetwork catalog. ISO19135 (more on this below) not only captures the concepts and relationships between the concepts, but (amongst other things) how the concepts have evolved and most importantly, who has contributed to and managed the evolution of the concepts and the thesauri itself.</p>
+</div>
+<div class="section" id="external-local-and-register-thesauri">
+<h2>External, Local and Register Thesauri<a class="headerlink" href="#external-local-and-register-thesauri" title="Permalink to this headline">¶</a></h2>
+<p>There are three types of thesaurus in GeoNetwork. The different types are based on where the thesaurus comes from:</p>
+<ul class="simple">
+<li><em>External</em>: A thesaurus managed by an external organisation and imported as a SKOS file. It is flagged to <tt class="docutils literal"><span class="pre">external</span></tt> which means that users are not allowed to edit the thesaurus.</li>
+<li><em>Local</em>: A thesaurus built in the GeoNetwork thesaurus editor and stored as a SKOS file. It is flagged as <tt class="docutils literal"><span class="pre">local</span></tt> which means that users are allowed to edit the thesaurus.</li>
+<li><em>Register</em>: A SKOS thesaurus created from an ISO19135 register record. Users can edit the thesaurus by changing the content of the ISO19135 register record in the GeoNetwork metadata editor and then regenerating the thesaurus. Users cannot edit the thesaurus in thesaurus manager.</li>
+</ul>
+</div>
+<div class="section" id="iso19115-19139-thesaurus-categories">
+<h2>ISO19115/19139 Thesaurus Categories<a class="headerlink" href="#iso19115-19139-thesaurus-categories" title="Permalink to this headline">¶</a></h2>
+<p>All thesauri in GeoNetwork are categorized using the codelist values for the gmd:MD_KeywordTypeCode element from ISO19115/19139. The categories and their meanings are given below but can also be found in http://www.isotc211.org/2005/resources/gmxCodelist.xml:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ISO Thesaurus Category</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>place</td>
+<td>Thesaurus has concepts identifying a location</td>
+</tr>
+<tr class="row-odd"><td>stratum</td>
+<td>Thesaurus has concepts identifying layers of any deposited substance</td>
+</tr>
+<tr class="row-even"><td>temporal</td>
+<td>Thesaurus has concepts identifying a time period</td>
+</tr>
+<tr class="row-odd"><td>theme</td>
+<td>Thesaurus has concepts identifying a particular subject or topic</td>
+</tr>
+<tr class="row-even"><td>discipline</td>
+<td>Thesaurus has concepts identifying a branch of instruction or specialized learning</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="skos-format">
+<h2>SKOS format<a class="headerlink" href="#skos-format" title="Permalink to this headline">¶</a></h2>
+<p>The Simple Knowledge Organisation Systems (SKOS) <a class="reference external" href="http://www.w3.org/2004/02/skos/">http://www.w3.org/2004/02/skos/</a> is an area of work developing specifications and standards to support the use of knowledge organisation systems (KOS) such as thesauri, classification schemes. This format is used by GeoNetwork to store thesaurus information.</p>
+<p>A concept is defined by an identifier, a preferred label, a definition and links with other concepts. Labels and definitions could be stored in multiple languages (using the xml:lang attributes). Three type of links between concepts have been defined in the SKOS format:</p>
+<ul class="simple">
+<li>related terms</li>
+<li>broader terms</li>
+<li>narrower terms</li>
+</ul>
+<p>For example, a concept <tt class="docutils literal"><span class="pre">ABLETTE</span></tt> could be defined as follow with a label in French and English, linked to broader concept:</p>
+<div class="highlight-python"><pre>&lt;skos:Concept rdf:about="http://www.oieau.org/concept#c4fc54576dc00227b82a709287ac3681"&gt;
+    &lt;skos:prefLabel xml:lang="fr"&gt;ABLETTE&lt;/skos:prefLabel&gt;
+    &lt;skos:prefLabel xml:lang="en"&gt;BLEAK&lt;/skos:prefLabel&gt;
+    &lt;skos:broader rdf:resource="http://www.oieau.org/concept#9f25ece36d04776e09492c66627cccb9"/&gt;
+&lt;/skos:Concept&gt;</pre>
+</div>
+<p>GeoNetwork supports multilingual thesauri (e.g. Agrovoc). Search and editing takes place in the current user interface language (i.e. if the interface is in English, when editing metadata, GeoNetwork will only search for concept in English).</p>
+<p>We use SKOS to represent thesauri in GeoNetwork because:</p>
+<ul class="simple">
+<li>it provides a simple and compact method of describing concepts and relationships between concepts from a field of knowledge</li>
+<li>SKOS concepts can be queried and managed by the sesame/openRDF software used by GeoNetwork</li>
+</ul>
+</div>
+<div class="section" id="iso19135-register-format">
+<h2>ISO19135 register format<a class="headerlink" href="#iso19135-register-format" title="Permalink to this headline">¶</a></h2>
+<p>ISO19135 is an ISO standard that describes procedures for registering an item and the schema for describing a list (or register) of items and the processes by which the items can be created and evolve. This schema is available as a plugin for use in GeoNetwork. To use it, you must download and load the iso19135 plugin schema into GeoNetwork. FIXME: We need a standard way of referring to plugin schemas and a standard place from which they can be downloaded.</p>
+<p>A typical ISO19135 register record describes:</p>
+<ul class="simple">
+<li>the name and a description of the register</li>
+<li>version and language information</li>
+<li>contact information of those that have a role in the register (eg. manager, contributor, custodian, publisher etc)</li>
+<li>the elements used to describe an item in the register</li>
+<li>the items</li>
+</ul>
+<p>The standard information used to describe a register item includes:</p>
+<ul class="simple">
+<li>identifier</li>
+<li>name and description of item</li>
+<li>field of application</li>
+<li>lineage and references to related register items</li>
+</ul>
+<p>An example of a register item from register of the NASA GCMD (Global Change Master Directory) science keywords is shown below.</p>
+<div class="highlight-python"><pre>&lt;grg:RE_RegisterItem uuid="d1e7"&gt;
+   &lt;grg:itemIdentifier&gt;
+      &lt;gco:Integer&gt;7&lt;/gco:Integer&gt;
+   &lt;/grg:itemIdentifier&gt;
+   &lt;grg:name&gt;
+      &lt;gco:CharacterString&gt;Aquaculture&lt;/gco:CharacterString&gt;
+   &lt;/grg:name&gt;
+   &lt;grg:status&gt;
+      &lt;grg:RE_ItemStatus&gt;valid&lt;/grg:RE_ItemStatus&gt;
+   &lt;/grg:status&gt;
+   &lt;grg:dateAccepted&gt;
+      &lt;gco:Date&gt;2006&lt;/gco:Date&gt;
+   &lt;/grg:dateAccepted&gt;
+   &lt;grg:definition gco:nilReason="missing"/&gt;
+   &lt;grg:itemClass xlink:href="#Item_Class"/&gt;
+   &lt;grg:specificationLineage&gt;
+      &lt;grg:RE_Reference&gt;
+         &lt;grg:itemIdentifierAtSource&gt;
+            &lt;gco:CharacterString&gt;5&lt;/gco:CharacterString&gt;
+         &lt;/grg:itemIdentifierAtSource&gt;
+         &lt;grg:similarity&gt;
+            &lt;grg:RE_SimilarityToSource codeListValue="generalization"
+               codeList="http://ww.../lists.xml#RE_SimilarityToSource"/&gt;
+         &lt;/grg:similarity&gt;
+      &lt;/grg:RE_Reference&gt;
+   &lt;/grg:specificationLineage&gt;
+&lt;/grg:RE_RegisterItem&gt;</pre>
+</div>
+<p>As mentioned earlier, to use a thesaurus described by an ISO19135 register record, GeoNetwork uses an XSLT called xml_iso19135ToSKOS.xsl (from the convert subdirectory in the iso19135 plugin schema) to extract the following from the ISO19135 register record:</p>
+<ul class="simple">
+<li>valid concepts (grg:itemIdentifier, grg:name, grg:status)</li>
+<li>relationships to other concepts (grg:specificationLineage)</li>
+<li>title, version and other management info</li>
+</ul>
+<p>This information is used build a SKOS file. The SKOS file is then available for query and management by the sesame/openRDF software used in GeoNetwork.</p>
+</div>
+<div class="section" id="creating-or-importing-a-thesaurus">
+<h2>Creating or Importing a Thesaurus<a class="headerlink" href="#creating-or-importing-a-thesaurus" title="Permalink to this headline">¶</a></h2>
+<p>External and local thesauri are created or imported using the thesaurus manager. You can use the thesaurus manager by:</p>
+<ul class="simple">
+<li>logging in as an administrator</li>
+<li>navigating to the &#8216;Administration&#8217; page and clicking on the link <tt class="docutils literal"><span class="pre">Manage</span> <span class="pre">thesauri</span></tt></li>
+</ul>
+<p>The thesaurus manager page will show a list of thesauri that have been created or imported. The upper part of the page provides the user with functions to edit, add, modify or search a thesaurus. The lower part provides a function to upload an external thesaurus in SKOS format.</p>
+<div class="section" id="creating-a-local-thesaurus">
+<h3>Creating a local thesaurus<a class="headerlink" href="#creating-a-local-thesaurus" title="Permalink to this headline">¶</a></h3>
+<p>To create a local thesaurus, click the <tt class="docutils literal"><span class="pre">+</span></tt> sign on the category you want your
+thesaurus to be in. Once created, the thesaurus can be updated through the
+edit interface. The meaning of each column is as follows:</p>
+<ul class="simple">
+<li><strong>Type</strong> - This is an identifier assigned to the thesaurus in GeoNetwork. It is composed of the ISO category to which the thesaurus has been assigned (see the codelist for the gmd:MD_KeywordTypeCode element in http://www.isotc211.org/2005/resources/gmxCodelist.xml), whether the thesaurus is a local, external or register thesaurus and the filename of the SKOS file that holds the thesaurus. (Note: the name of the file used to hold a register thesaurus is the uuid of the ISO19135 register record that describes the thesaurus).</li>
+<li><strong>Name</strong> - This is the name of the thesaurus which is the administrator on creation or the filename if the thesaurus is ting a thesaurus, the name of the thesaurus will be the filename of the thesaurus.</li>
+</ul>
+<p>For each thesaurus the following buttons are available:</p>
+<ul class="simple">
+<li><strong>Download</strong> - Link to the SKOS RDF file.</li>
+<li><strong>Delete</strong> - Remove thesaurus from the current node.</li>
+<li><strong>View</strong> - If type is external, the view button allows to search and view concepts.</li>
+<li><strong>Edit</strong> - If type is local, the edit button allows to search, add, remove and view concepts.</li>
+</ul>
+</div>
+<div class="section" id="import-an-external-thesaurus">
+<h3>Import an external thesaurus<a class="headerlink" href="#import-an-external-thesaurus" title="Permalink to this headline">¶</a></h3>
+<p>GeoNetwork allows thesaurus import in SKOS format. Once uploaded, an external thesaurus cannot be updated. Select the category, browse for the thesaurus file and click upload. The SKOS file will be in <tt class="docutils literal"><span class="pre">GEONETWORK_DATA_DIR/config/codelist/external/thesauri/&lt;category&gt;</span></tt>.</p>
+<p>At the bottom of the page there are the following buttons:</p>
+<ol class="arabic simple">
+<li><em>Back</em>: Go back to the main administration page.</li>
+<li><em>Upload</em>: Upload the selected RDF file to the node. Then it will list all thesaurus available on the node.</li>
+</ol>
+</div>
+<div class="section" id="creating-a-register-thesaurus">
+<h3>Creating a register thesaurus<a class="headerlink" href="#creating-a-register-thesaurus" title="Permalink to this headline">¶</a></h3>
+<p>An ISO19135 record in the local GeoNetwork catalog can be turned into a SKOS file and used as a thesaurus in GeoNetwork. ISO19135 records not in the local catalog can be harvested from other catalogs (eg. the catalog of the organisation that manages the register). Once the ISO19135 register record is in the local catalog, the process of turning it into a thesaurus for use in the keywords selector begins a search for the record. Having located the record in the search results, one of the actions on the record is to &#8216;Create/Update Thesaurus&#8217;.</p>
+<blockquote>
+<div><em>Search results showing ISO19135 record with thesaurus creation action</em></div></blockquote>
+<p>After selecting this action, you can choose the ISO thesaurus category appropriate for this thesaurus:</p>
+<blockquote>
+<div><em>Selecting the ISO thesaurus category when creating a thesaurus</em></div></blockquote>
+<p>After selecting the ISO thesaurus category, the ISO19135 register record is converted to a SKOS file and installed as a thesaurus ready for use in the metadata editor. As described above in the section on ISO19135, only the valid register items are included in the thesaurus. This behaviour and any of the mappings between ISO19135 register items and the SKOS thesaurus file can be changed or inspected by looking at the XSLT xml_iso19135TOSKOS.xsl in the convert subdirectory of the iso19135 schema plugin.</p>
+</div>
+</div>
+<div class="section" id="editing-browsing-a-local-or-external-thesaurus-add-remove-browse-keywords">
+<h2>Editing/browsing a local or external thesaurus: add/remove/browse keywords<a class="headerlink" href="#editing-browsing-a-local-or-external-thesaurus-add-remove-browse-keywords" title="Permalink to this headline">¶</a></h2>
+<p>From the thesaurus administration interface, click on the edit button for a local thesaurus or the view button for an external thesaurus. This interface allows:</p>
+<ul class="simple">
+<li>keywords search</li>
+<li>add/remove keywords for local thesaurus.</li>
+</ul>
+<p>Use the textbox and the type of search in order to search for keywords.</p>
+</div>
+<div class="section" id="editing-a-register-thesaurus">
+<h2>Editing a register thesaurus<a class="headerlink" href="#editing-a-register-thesaurus" title="Permalink to this headline">¶</a></h2>
+<p>A register thesaurus is created from an ISO19135 metadata record as described above, so a register thesaurus is updated by editing the ISO19135 metadata record and then regenerating the register thesaurus. The ISO19135 metadata record can be created and edited in the GeoNetwork editor.</p>
+<div class="section" id="preparing-to-edit-an-iso19135-register-record">
+<span id="xlinks-thesaurus"></span><h3>Preparing to edit an ISO19135 register record<a class="headerlink" href="#preparing-to-edit-an-iso19135-register-record" title="Permalink to this headline">¶</a></h3>
+<p>Register records can be very large. For example, a register record describing the ANZLIC Geographic Extent Names register has approx 1800 register items. Each register item holds not only the name of the geographic extent, but also its geographic extent and details of the lineage, relationships to other terms and potentially, the evolution of the extent (changes to name, geographic extent) including the details of changes and why those changes occurred. Editing such a large record in the GeoNetwork editor can cause performance problems for both the browser and the server because the editor constructs an HTML form describing the entire record. Fortunately a much more scaleable approach exists which is based on extracting the register items from the ISO19135 register record and storing them as subtemplates (essentially small metadata records with just the content of the register item). The process for extracting register items from an ISO19135 register record is as follows:</p>
+<ul class="simple">
+<li>search for and select the register record</li>
+<li>choose &#8216;Extract register items&#8217; from the &#8216;Actions on selected set&#8217; menu</li>
+<li>After the register items have been extracted, you should see a results summary like the following.</li>
+<li>The figure for &#8216;Subtemplates extracted&#8217; is the number of register items extracted from the ISO19135 register record.</li>
+</ul>
+</div>
+<div class="section" id="editing-a-register-item">
+<h3>Editing a register item<a class="headerlink" href="#editing-a-register-item" title="Permalink to this headline">¶</a></h3>
+<p>To edit/change any of the register items that have been extracted as subtemplates, you can use the Directory management interface. This interface is accessed from the &#8216;Administration&#8217; menu, under &#8216;Manage Directories&#8217;. In this interface:</p>
+<ul class="simple">
+<li>select &#8216;Register Item (GeoNetwork)&#8217; as the type of subtemplate to edit as follows.</li>
+<li>enter a search term or just select the search option to return the first 50 register items.</li>
+<li>register items will appear in the left hand side bar, selecting on one will open an editing interface in the right hand panel.</li>
+</ul>
+</div>
+<div class="section" id="editing-global-register-information">
+<h3>Editing global register information<a class="headerlink" href="#editing-global-register-information" title="Permalink to this headline">¶</a></h3>
+<p>To edit/change any of the global register information (eg. register owner, manager, version, languages), edit the register record in the normal GeoNetwork metadata editing interface.</p>
+</div>
+</div>
+<div class="section" id="metadata-editing-adding-keywords">
+<h2>Metadata editing: adding keywords<a class="headerlink" href="#metadata-editing-adding-keywords" title="Permalink to this headline">¶</a></h2>
+<p>When editing an ISO metadata record, a keyword (or concept) picker can be used which allows the editor to:</p>
+<ul class="simple">
+<li>do searches for keywords in one or more thesauri in the catalog (search results are displayed on the left).</li>
+<li>select one or more keywords and add them to the selected items list (using arrows or drag &amp; drop) on the right.</li>
+<li>add the selected keywords directly into metadata, grouping keywords by thesaurus.</li>
+</ul>
+<p>The editor can also control how many keywords from searches are displayed in the keyword picker (default is 50).</p>
+<p>Notice that a URL pointing to the source thesaurus is included in the Thesaurus Name citation (the actual element used for this is gmd:otherCitationDetails/gmx:FileName). The thesaurus can be downloaded as a SKOS file if it is a local or external thesaurus. For register thesauri the URL refers to the ISO19135 register record from which the thesaurus was created.</p>
+</div>
+<div class="section" id="search-criteria-keywords">
+<h2>Search criteria: keywords<a class="headerlink" href="#search-criteria-keywords" title="Permalink to this headline">¶</a></h2>
+<p>You can search on keywords in the advanced search interface. To help select a keyword you can click in the keyword search field to bring up a list of all the keywords that have been used in the metadata records in this catalog. These keywords are indexed by Lucene on creation/update of metadata.
+Each keyword in the list has the number of records that use the keyword displayed next to it.</p>
+<p>If an XML element named keyword-select-panel is present as a child of the search element in the <em>config-gui.xml</em> file (in the WEB-INF directory), then search for keyword using the keyword selection panel is available as in the metadata editor:</p>
+<div class="highlight-python"><pre>&lt;search&gt;
+ &lt;!-- Display or not keyword selection panel in advanced search panel
+  &lt;keyword-selection-panel/&gt;
+ --&gt;
+&lt;/search&gt;</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../managing-metadata-standards/index.html" class="btn btn-neutral float-right" title="Managing metadata standards" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="managing-directories.html" class="btn btn-neutral" title="Managing directories" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2001-2016, GeoNetwork opensource. Licensed under Creative Commons Attribution ShareAlike (Unported) v3.0 License.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'3.0.4',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
