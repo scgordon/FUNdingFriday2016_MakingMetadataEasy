@@ -1,0 +1,497 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial setting up an Atom/OpenSearch based INSPIRE download service &mdash; GeoNetwork opensource 3.0.4 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="GeoNetwork opensource 3.0.4 documentation" href="../../index.html"/>
+        <link rel="up" title="Tutorials" href="index.html"/>
+        <link rel="next" title="Tutorial setting up a WFS based INSPIRE download service with GeoServer" href="download-geoserver.html"/>
+        <link rel="prev" title="Tutorial setting up INSPIRE view service with GeoNetwork and Mapserver" href="view-mapserver.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> GeoNetwork opensource
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/about.html">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/authors.html">Author</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#project-steering-committee-psc">Project Steering Committee (PSC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#committers">Committers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#contributors">Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#the-documentation">The documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/change-log/index.html">Change log</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.0.html">Version 3.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.1.html">Version 3.0.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.2.html">Version 3.0.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.3.html">Version 3.0.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.4.html">Version 3.0.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.2.0.html">Version 3.2.0</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/quick-start/index.html">Quick start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#starting-the-catalog">Starting the catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#signing-in-and-load-templates">Signing in and load templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#searching-information">Searching information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#discovering-information">Discovering information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#for-more-information">For more information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/describing-information/index.html">Describing information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/managing-templates.html">Creating templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/creating-metadata.html">Creating a new record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/importing-metadata.html">Importing a new record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/editing-metadata.html">Editing metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/deleting-metadata.html">Deleting a record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/multilingual-editing.html">Multilingual editing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/associating-resources/index.html">Associating resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/associating-resources/linking-documents.html">Associating documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/associating-resources/linking-records.html">Associating another record</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/tag-information/index.html">Classify information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/tag-information/tagging-with-categories.html">Tagging with categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/tag-information/tagging-with-keywords.html">Tagging with keywords</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/publishing/index.html">Publishing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/managing-privileges.html">Managing privileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/restricting-information-to-metadata-sections.html">Restricting information to metadata sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/transfering-privileges.html">Transfering privileges</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/analyzing/index.html">Analyzing data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/analyzing/metadata.html">Statistics on catalog content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/analyzing/data.html">Analyze and visualize data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/workflow/index.html">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/validation.html">Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/suggestion.html">Suggestion for improving metadata content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/life-cycle.html">Life cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/geopublication.html">Publishing GIS data in a map server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/versioning.html">Versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/batchupdate.html">Updating a set of records</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/harvesting/index.html">Harvesting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-geonetwork.html">GeoNetwork 2.0 Harvester</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-csw.html">Harvesting CSW services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-ogcwxs.html">Harvesting OGC Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-filesystem.html">Local File System Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-webdav.html">WEBDAV Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-oaipmh.html">OAIPMH Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-sde.html">Harvesting an ARCSDE Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-geoportal.html">GeoPortal REST Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-thredds.html">THREDDS Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-wfs-features.html">WFS GetFeature Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-z3950.html">Z3950 Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#mechanism-overview">Mechanism overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-life-cycle">Harvesting life cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#multiple-harvesting-and-hierarchies">Multiple harvesting and hierarchies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-fragments-of-metadata-to-support-re-use">Harvesting Fragments of Metadata to support re-use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#https-support">HTTPS support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#the-main-page">The main page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-status-and-error-icons">Harvesting Status and Error Icons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-result-tips">Harvesting result tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#adding-new-harvesters">Adding new harvesters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvest-history">Harvest History</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/export/index.html">Exporting records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/export/index.html#export-as-a-zip-archive">Export as a ZIP archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/export/index.html#export-as-a-csv-file">Export as a CSV file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator-guide/index.html">Administrator guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../administrator-guide/configuring-the-catalog/index.html">Configuring the catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/configuring-the-catalog/system-configuration.html">System configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/configuring-the-catalog/csw-configuration.html">Configuring CSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/configuring-the-catalog/virtual-csw-configuration.html">Configuring virtual CSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/configuring-the-catalog/inspire-configuration.html">Configuring for the INSPIRE Directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/configuring-the-catalog/map-server-configuration.html">Map servers configuration for geopublication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../administrator-guide/managing-users-and-groups/index.html">Managing users and groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-users-and-groups/creating-group.html">Creating group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-users-and-groups/creating-user.html">Creating user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-users-and-groups/user-self-registration.html">User Self-Registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-users-and-groups/authentication-mode.html">Authentication mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-users-and-groups/index.html#default-user">Default user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-users-and-groups/index.html#user-session">User session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-users-and-groups/index.html#users-groups-and-roles">Users, Groups and Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../administrator-guide/managing-classification-systems/index.html">Managing classification system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-classification-systems/managing-categories.html">Managing categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-classification-systems/managing-directories.html">Managing directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-classification-systems/managing-thesaurus.html">Managing thesaurus</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../administrator-guide/managing-metadata-standards/index.html">Managing metadata standards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../administrator-guide/managing-metadata-standards/index.html#adding-a-schema">Adding a schema</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maintainer-guide/index.html">Maintainer guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/installing/index.html">Installing the application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/installing-from-the-installer.html">Installing from the installer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/installing-from-war-file.html">Installing from WAR file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/installing-from-source-code.html">Installing from source code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/installing-solr.html">Installing Solr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/configuring-database.html">Configuring the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/loading-samples.html">Loading templates and sample data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/customizing-data-directory.html">Customizing the data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/installing/using-multinode-mode.html">Using multinode mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/updating/index.html">Updating the application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/updating/automatic-update.html">Automatic update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/updating/manual-update.html">Manual update</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/backup/index.html">Backup the application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/csw.html">Catalog Service for the Web (CSW)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/opensearch.html">OpenSearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/oai-pmh.html">Open Archive Initiative (OAI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/z39-50.html">Z39-50</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/rdf-dcat.html">RDF DCAT end point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/the-geonetwork-api.html">GeoNetwork API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/writing-documentation.html">Writing documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#build-the-docs">Build the docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#edit-the-restructuredtext-files">Edit the reStructuredText files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#sphinx">Sphinx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/translating.html">Translating the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/translating.html#translating-a-standard">Translating a standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/making-a-pull-request.html">Making a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/doing-a-release.html">Doing a GeoNetwork release</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../customizing-application/index.html">Customizing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/search-ui/index.html">Search application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/loadview.html">Create your own view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/configdefault.html">Change default view configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/customview.html">Create your own view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/enrichview.html">Enrich your custom view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/wro4jdependencies.html">Wro4j resource management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/creating-custom-view.html">Customizing metadata views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html">Customizing editor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-field-type">Defining field type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#grouping-element-from-the-standards">Grouping element from the standards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-multilingual-fields">Defining multilingual fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#configuring-views">Configuring views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-a-view">Defining a view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-a-tab">Defining a tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-section-to-a-tab">Adding a section to a tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-field">Adding a field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-template-based-field">Adding a template based field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-documentation-or-help">Adding documentation or help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-button">Adding a button</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/changing-layout.html">Theming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html">Configuring search fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#add-a-search-field">Add a search field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#boosting-documents-and-fields">Boosting documents and fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#boosting-search-results">Boosting search results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/configuring-facetted-search.html">Configuring facetted search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-facetted-search.html#facet-principle">Facet principle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-facetted-search.html#facet-response-when-searching">Facet response when searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-facetted-search.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/advanced-configuration.html">Advanced configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/advanced-configuration.html#user-session-timeout-configuration">User session timeout configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html">Implementing schema plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#metadata-schemas-and-profiles">Metadata schemas and profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#implementing-a-metadata-schema-or-profile">Implementing a metadata schema or profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#schema-plugins">Schema Plugins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/characterset.html">Characterset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/misc.html">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html">Introduction to GeoNetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/deployment/index.html">Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/setup/index.html">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/edit/index.html">Editing Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/harvesting/index.html">Harvesting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customui/index.html">Customize your GeoNetwork UI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customui/search/index.html">Search page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customui/view/index.html">Formatter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hookcustomizations/index.html">Hook your own code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hookcustomizations/newproject/index.html">Separate your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hookcustomizations/events/index.html">Using Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hookcustomizations/ui/index.html">Adding new User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hookcustomizations/schemaplugins/index.html">Schema Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hookcustomizations/searchfields/index.html">Search Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="view-geoserver.html">Tutorial setting up INSPIRE view service with GeoNetwork and GeoServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view-mapserver.html">Tutorial setting up INSPIRE view service with GeoNetwork and Mapserver</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Tutorial setting up an Atom/OpenSearch based INSPIRE download service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download-geoserver.html">Tutorial setting up a WFS based INSPIRE download service with GeoServer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../annexes/index.html">Annexes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/mef-format.html">Metadata Exchange Format (MEF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/glossary/index.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/standards/index.html">Standards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../annexes/standards/iso19139/index.html">ISO Standard for metadata on Geographic Information (ISO 19139)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../annexes/standards/dublin-core/index.html">Dublin Core</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">GeoNetwork opensource</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+      
+          <li><a href="index.html">Tutorials</a> &raquo;</li>
+      
+    <li>Tutorial setting up an Atom/OpenSearch based INSPIRE download service</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/geosource-catalogue/doc/blob/develop/en/tutorials/inspire/download-atom.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="tutorial-setting-up-an-atom-opensearch-based-inspire-download-service">
+<span id="tuto-download-atom"></span><h1>Tutorial setting up an Atom/OpenSearch based INSPIRE download service<a class="headerlink" href="#tutorial-setting-up-an-atom-opensearch-based-inspire-download-service" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial shows how one can set up GeoNetwork to provide download services following <a class="reference external" href="http://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-download-services">technical guidelines for download services</a>.</p>
+<p>Note that the technical guidelines allow both Atom/OpenSearch as well as <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">WFS</a>. This tutorial describes how to set up a download service using Atom/Opensearch.</p>
+<p>The basics of Atom/OpenSearch is that for each dataset a number of file-downloads in various flavours (language/projection/format) is available. These flavours are advertised in a &#8220;Dataset Atom Feed&#8221; document. A set of &#8220;Dataset Atom Feed&#8221; documents is grouped into a &#8220;Service Atom Feed&#8221; document. For each &#8220;Service Atom Feed&#8221; document an OpenSearchDescription document is available. A website can refer to this OpenSearchDescription document, which enables searching through the download service using the browser search bar (OpenSearch).</p>
+<div class="section" id="geonetwork">
+<h2>GeoNetwork<a class="headerlink" href="#geonetwork" title="Permalink to this headline">¶</a></h2>
+<p>GeoNetwork implements OpenSearch on a set of Dataset- and Service Atom feeds. An OpenSearch Description document is generated for each Service Atom Feed.</p>
+<p>GeoNetwork will soon support an internal- and external mode.</p>
+<ul class="simple">
+<li>in internal mode GeoNetwork will generate Atom files dynamically from metadata content.</li>
+<li>in external mode GeoNetwork will ingest Atom files that are linked to metadata records.</li>
+</ul>
+<p>Currently only the external mode is fully supported. Atom files can be generated in any text or xml editor following the technical guidelines. To optimise the Atom support GeoNetwork uses a convention, which is currently not mandated by the technical guidelines.
+The convention is that any gmd:MD_Distribution having a link to an Atom file requires the protocol field to contain a defined value to indicate the distribution as being an Atom document. Default value for this protocol is INSPIRE-ATOM, but you can change it using Admin &gt; Settings. The benefit of this approach is that GeoNetwork doesn&#8217;t need to open any file-link to determine if it is an Atom File. We&#8217;ve seen various member states mandate this convention in localised INSPIRE Technical Guidelines.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;gmd:MD_DigitalTransferOptions&gt;</span>
+ <span class="nt">&lt;gmd:onLine&gt;</span>
+  <span class="nt">&lt;gmd:CI_OnlineResource&gt;</span>
+   <span class="nt">&lt;gmd:linkage&gt;</span>
+    <span class="nt">&lt;gmd:URL&gt;</span>http://www.broinspireservices.nl/atom/awp.atom<span class="nt">&lt;/gmd:URL&gt;</span>
+   <span class="nt">&lt;/gmd:linkage&gt;</span>
+   <span class="nt">&lt;gmd:protocol&gt;</span>
+    <span class="nt">&lt;gco:CharacterString&gt;</span>INSPIRE-ATOM<span class="nt">&lt;/gco:CharacterString&gt;</span>
+   <span class="nt">&lt;/gmd:protocol&gt;</span>
+   <span class="nt">&lt;gmd:name&gt;</span>
+    <span class="nt">&lt;gco:CharacterString&gt;</span>gdn.Aardwarmtepotentie<span class="nt">&lt;/gco:CharacterString&gt;</span>
+   <span class="nt">&lt;/gmd:name&gt;</span>
+  <span class="nt">&lt;/gmd:CI_OnlineResource&gt;</span>
+ <span class="nt">&lt;/gmd:onLine&gt;</span>
+<span class="nt">&lt;/gmd:MD_DigitalTransferOptions&gt;</span>
+</pre></div>
+</div>
+<p>When deploying Geonetwork, make sure the GEMET thesauri are loaded and activate the INSPIRE editor as described in <a class="reference external" href="http://geonetwork-opensource.org/manuals/trunk/eng/users/administrator-guide/configuring-the-catalog/inspire-configuration.html">inspire configuration</a>. In this file &#8220;schemas/iso19139/src/main/plugin/iso19139/loc/eng/labels.xml &#8221; (and the same file in other languages in use in the catalogue) in the gmd:protocol helper (around line 2000) add the &#8220;INSPIRE-ATOM&#8221; protocol which is used to indicate links that link to an Atom file (only links having that protocol value will be ingested).</p>
+<p>In Admin &gt; Settings activate the INSPIRE extension and activate Atom harvesting (at certain interval). The settings page facilitates to set a protocol which is used in metadata to indicate an Atom link.</p>
+<img alt="../../_images/image_4.png" src="../../_images/image_4.png" />
+<p>For each dataset that you are going to publish create an iso19115 record using the INSPIRE template. Link each record to the related atom file (or upload an atom file)</p>
+<img alt="../../_images/image_7.png" src="../../_images/image_7.png" />
+<p>Make sure the metadata contains the same gmd:code as used in the Atom file.</p>
+<p>Now create a service metadata using the INSPIRE template and link it to the service Atom and the individual datasets (using srv:operatesOn).</p>
+<p>Before you validate the implementation, run the Atom harvester in admin &gt; settings manually. A panel will display the number of processed Atom feeds and any errors that may have occured while processing (more details in log file).</p>
+</div>
+<div class="section" id="validate-the-implementation">
+<h2>Validate the implementation<a class="headerlink" href="#validate-the-implementation" title="Permalink to this headline">¶</a></h2>
+<p>If you are running the above setup online, you can use the <a class="reference external" href="http://inspire-geoportal.ec.europa.eu/validator2/">pilot JRC INSPIRE validator</a>. If the above setup is running locally, you can use <a class="reference external" href="https://github.com/Geonovum/etf-test-projects-inspire">Esdin Test Framework</a> to validate the INSPIRE setup.</p>
+<img alt="../../_images/image_6.png" src="../../_images/image_6.png" />
+<p>Running the test frequently during development helps to identify issues in an early stage.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="download-geoserver.html" class="btn btn-neutral float-right" title="Tutorial setting up a WFS based INSPIRE download service with GeoServer" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="view-mapserver.html" class="btn btn-neutral" title="Tutorial setting up INSPIRE view service with GeoNetwork and Mapserver" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2001-2016, GeoNetwork opensource. Licensed under Creative Commons Attribution ShareAlike (Unported) v3.0 License.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'3.0.4',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
