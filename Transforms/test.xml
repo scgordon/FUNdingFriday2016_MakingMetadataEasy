@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0"
+                 xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0"
+                 xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+                 xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+                 xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0"
+                 xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/1.0"
+                 xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
+                 xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/1.0"
+                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+                 xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+                 xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
+                 xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/1.0"
+                 xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
+                 xmlns:mil="http://standards.iso.org/iso/19115/-3/mil/1.0"
+                 xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/1.0"
+                 xmlns:mmd="http://standards.iso.org/iso/19115/-3/mmd/1.0"
+                 xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
+                 xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0"
+                 xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/1.0"
+                 xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
+                 xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+                 xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
+                 xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/1.0"
+                 xmlns:mdq="http://standards.iso.org/iso/19115/-3/mdq/1.0"
+                 xmlns:eos="http://earthdata.nasa.gov/schema/eos"
+                 xmlns:dcite="http://datacite.org/schema/kernel-3"
+                 xmlns:dqm="http://standards.iso.org/iso/19115/-3/dqm/1.0"
+                 xmlns:mai="http://standards.iso.org/iso/19115/-3/mai/1.0"
+                 xmlns:mic="http://standards.iso.org/iso/19115/-3/mic/1.0"
+                 xmlns:mis="http://standards.iso.org/iso/19115/-3/mis/1.0"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <mdb:metadataIdentifier>
+      <mcc:MD_Identifier>
+         <mcc:code>
+            <gco:CharacterString>10.1594/IEDA/100034</gco:CharacterString>
+         </mcc:code>
+         <mcc:description>
+            <gco:CharacterString>DOI</gco:CharacterString>
+         </mcc:description>
+      </mcc:MD_Identifier>
+   </mdb:metadataIdentifier>
+   <mdb:defaultLocale>
+      <lan:PT_Locale>
+         <lan:Language>
+            <lan:LanguageCode codeList="codeListLocation#LanguageCode" codeListValue="eng">eng</lan:LanguageCode>
+         </lan:Language>
+      </lan:PT_Locale>
+   </mdb:defaultLocale>
+   <mdb:metadataScope>
+      <mdb:MD_MetadataScope>
+         <mdb:resourceScope>
+            <mcc:MD_ScopeCode codeList="codeListLocation#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
+         </mdb:resourceScope>
+      </mdb:MD_MetadataScope>
+   </mdb:metadataScope>
+   <mdb:dateInfo>
+      <cit:CI_Date>
+         <cit:date>
+            <gco:DateTime>2017-01-10T13:20:51.874-05:00</gco:DateTime>
+         </cit:date>
+         <cit:dateType>
+            <cit:CI_DateTypeCode codeList="codeListLocation#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
+         </cit:dateType>
+      </cit:CI_Date>
+   </mdb:dateInfo>
+   <mdb:metadataStandard>
+      <cit:CI_Citation>
+         <cit:title>
+            <gco:CharacterString>ISO 19115-1 Geographic Information - Metadata Part 1 Fundamentals</gco:CharacterString>
+         </cit:title>
+         <cit:edition>
+            <gco:CharacterString>ISO/FDIS 19115-1:2013(E)</gco:CharacterString>
+         </cit:edition>
+      </cit:CI_Citation>
+   </mdb:metadataStandard>
+   <mdb:identificationInfo>
+      <mri:MD_DataIdentification>
+         <mri:citation>
+            <cit:CI_Citation>
+               <cit:title>
+                  <gco:CharacterString>Chemical composition of ferromanganese crusts in the world ocean</gco:CharacterString>
+               </cit:title>
+               <cit:date>
+                  <cit:CI_Date>
+                     <cit:date>
+                        <gco:DateTime>T00:00:00</gco:DateTime>
+                     </cit:date>
+                     <cit:dateType>
+                        <cit:CI_DateTypeCode codeList="codeListLocation#CI_DateTypeCode" codeListValue="revision">revision</cit:CI_DateTypeCode>
+                     </cit:dateType>
+                  </cit:CI_Date>
+               </cit:date>
+               <cit:edition/>
+               <cit:identifier>
+                  <mcc:MD_Identifier>
+                     <mcc:MD_Identifier>
+                        <mcc:code>
+                           <gco:CharacterString>10.1594/IEDA/100034</gco:CharacterString>
+                        </mcc:code>
+                        <mcc:description>
+                           <gco:CharacterString>DOI</gco:CharacterString>
+                        </mcc:description>
+                     </mcc:MD_Identifier>
+                  </mcc:MD_Identifier>
+               </cit:identifier>
+               <cit:citedResponsibleParty>
+                  <cit:CI_Responsibility>
+                     <cit:role>
+                        <cit:CI_RoleCode codeList="codeListLocation#CI_RoleCode" codeListValue="Editor">Editor</cit:CI_RoleCode>
+                     </cit:role>
+                     <cit:party>
+                        <cit:CI_Individual>
+                           <cit:name>
+                              <gco:CharacterString>EarthChem Library (ECL)</gco:CharacterString>
+                           </cit:name>
+                        </cit:CI_Individual>
+                     </cit:party>
+                  </cit:CI_Responsibility>
+               </cit:citedResponsibleParty>
+            </cit:CI_Citation>
+         </mri:citation>
+         <mri:abstract>
+            <gco:CharacterString>This is a fully integrated version of the ferromanganese crusts dataset, compiled by F.T. Manheim and C.M. Lane-Bostwick of the US Geological Survey, Woods Hole, MA. The original data set consists of tables corresponding the USGS Open-File Report 89-020 Chemical Composition of Ferromanganese Crusts in the World Ocean: A Review and Comprehensive Database. Data include excerpts from the SIO nodule file, the NGDC marine minerals data base, Japanese
+      sources, a PhD thesis, analyses performed at the Bureau of Mines, and analyses performed at other laboratories under the direction of the USGS. These data are also included on the NOAA &amp; MMS Marine Minerals CD-ROM data set released by NGDC in October of 1992. ferromanganese crust, Fe-Mn crust, metal, global</gco:CharacterString>
+         </mri:abstract>
+         <mri:extent>
+            <gex:EX_Extent id="boundingExtent"/>
+         </mri:extent>
+         <mri:resourceFormat>
+            <mrd:MD_Format>
+               <mrd:formatSpecificationCitation>
+                  <cit:CI_Citation>
+                     <cit:title>
+                        <gco:CharacterString>application/vnd.ms-excel</gco:CharacterString>
+                     </cit:title>
+                  </cit:CI_Citation>
+               </mrd:formatSpecificationCitation>
+            </mrd:MD_Format>
+         </mri:resourceFormat>
+         <mri:descriptiveKeywords>
+            <mri:MD_Keywords>
+               <mri:keyword>
+                  <gco:CharacterString>Geochemistry</gco:CharacterString>
+               </mri:keyword>
+               <mri:type>
+                  <mri:MD_KeywordTypeCode codeList="codeListLocation#MD_KeywordTypeCode" codeListValue="theme">theme</mri:MD_KeywordTypeCode>
+               </mri:type>
+            </mri:MD_Keywords>
+         </mri:descriptiveKeywords>
+         <mri:resourceConstraints>
+            <mco:MD_LegalConstraints>
+               <mco:otherConstraints>
+                  <gco:CharacterString>Creative Commons Attribution-NonCommercial-Share Alike 3.0 United States [CC BY-NC-SA 3.0]</gco:CharacterString>
+               </mco:otherConstraints>
+            </mco:MD_LegalConstraints>
+         </mri:resourceConstraints>
+         <mri:supplementalInformation/>
+      </mri:MD_DataIdentification>
+   </mdb:identificationInfo>
+   <mdb:distributionInfo>
+      <mrd:MD_Distribution>
+         <mrd:distributor>
+            <mrd:MD_Distributor>
+               <mrd:distributionOrderProcess>
+                  <mrd:MD_StandardOrderProcess>
+                     <mrd:fees gco:nilReason="missing"/>
+                  </mrd:MD_StandardOrderProcess>
+               </mrd:distributionOrderProcess>
+               <mrd:distributorFormat>
+                  <mrd:MD_Format>
+                     <mrd:formatSpecificationCitation>
+                        <cit:CI_Citation>
+                           <cit:title>
+                              <gco:CharacterString>application/vnd.ms-excel</gco:CharacterString>
+                           </cit:title>
+                        </cit:CI_Citation>
+                     </mrd:formatSpecificationCitation>
+                  </mrd:MD_Format>
+               </mrd:distributorFormat>
+               <mrd:distributorTransferOptions>
+                  <mrd:MD_DigitalTransferOptions/>
+               </mrd:distributorTransferOptions>
+            </mrd:MD_Distributor>
+         </mrd:distributor>
+      </mrd:MD_Distribution>
+   </mdb:distributionInfo>
+   <mdb:metadataMaintenance>
+      <mmi:MD_MaintenanceInformation>
+         <mmi:maintenanceAndUpdateFrequency>
+            <mmi:MD_MaintenanceFrequencyCode codeList="codeListLocation#MD_MaintenanceFrequencyCode"
+                                             codeListValue="irregular">irregular</mmi:MD_MaintenanceFrequencyCode>
+         </mmi:maintenanceAndUpdateFrequency>
+         <mmi:maintenanceNote>
+            <gco:CharacterString>Translated to ISO using DataCiteToISO19115-3.xsl Version: 2017-01-08</gco:CharacterString>
+         </mmi:maintenanceNote>
+      </mmi:MD_MaintenanceInformation>
+   </mdb:metadataMaintenance>
+</mdb:MD_Metadata>
