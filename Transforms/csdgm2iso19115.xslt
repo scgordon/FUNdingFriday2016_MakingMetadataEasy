@@ -1121,7 +1121,7 @@
 							</gmd:phone>
 							<xsl:for-each select="$var1_instance/metadata">
 								<xsl:variable name="var32_metadata" as="node()" select="."/>
-								<xsl:for-each select="metainfo/metc/cntinfo/cntaddr">
+								<xsl:for-each select="metainfo/metc/cntinfo/cntaddr[1]">
 									<gmd:address>
 										<gmd:CI_Address>
 											<xsl:for-each-group select="address" group-by="fn:normalize-space(xs:string(.))">
@@ -8459,7 +8459,7 @@
 									</gmd:phone>
 									<xsl:for-each select="$var1_instance/metadata">
 										<xsl:variable name="var2479_metadata" as="node()" select="."/>
-										<xsl:for-each select="metainfo/metc/cntinfo/cntaddr">
+										<xsl:for-each select="metainfo/metc/cntinfo/cntaddr[1]">
 											<gmd:address>
 												<gmd:CI_Address>
 													<xsl:for-each-group select="address" group-by="fn:normalize-space(xs:string(.))">
