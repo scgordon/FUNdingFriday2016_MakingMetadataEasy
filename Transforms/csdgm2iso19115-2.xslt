@@ -991,7 +991,7 @@
 		</xsl:for-each>
 	</xsl:function>
 	<xsl:template match="/">
-		<MI_Metadata>
+		<gmd:MD_Metadata>
 			<xsl:attribute name="xsi:schemaLocation" separator=" ">
 				<xsl:sequence select="'http://www.isotc211.org/2005/gmi http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd'"/>
 			</xsl:attribute>
@@ -8538,6 +8538,6 @@
 					</gmd:contact>
 				</gmd:MD_MaintenanceInformation>
 			</gmd:metadataMaintenance>
-		</MI_Metadata>
+		</gmd:MD_Metadata>
 	</xsl:template>
 </xsl:stylesheet>
